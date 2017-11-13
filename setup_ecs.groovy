@@ -264,9 +264,6 @@ ecsCloud = new ECSCloud(
 
 instance.clouds.each{cl -> logger.info(cl.name)}
 def clouds = instance.clouds
-logger.info("killing all existing clouds")
-clouds.removeAll{1 == 1 }
-instance.save()
 logger.info("adding provisioned cloud")
 clouds.add(ecsCloud)
 logger.info("Saving jenkins")
