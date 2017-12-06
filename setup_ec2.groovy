@@ -48,9 +48,6 @@ def windowsTemplate = new SlaveTemplate(
   customDeviceMapping = ""
 )
 
-logger.info("esc ECS_CLUSTER_ARN is ${arn} and JENKINS_OWN_IP is ${jenkinsUrl}")
-
-
 ecsCloud = new AmazonEC2Cloud(
   cloudName="windows",
   useInstanceProfileForCredentials = false,
