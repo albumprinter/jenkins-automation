@@ -3,9 +3,10 @@ import java.util.logging.Logger
 import jenkins.model.*
 
 import com.amazonaws.services.ec2.model.InstanceType;
-import hudson.plugins.ec2.AmazonEC2Cloud
-import hudson.plugins.ec2.SlaveTemplate
+import hudson.plugins.ec2.AmazonEC2Cloud;
+import hudson.plugins.ec2.SlaveTemplate;
 import hudson.plugins.ec2.WindowsData;
+import hudson.model.Node
 
 Logger logger = Logger.getLogger("ec2-cluster")
 logger.info("Getting the Jenkins instance..")
@@ -27,28 +28,25 @@ def windowsTemplate = new SlaveTemplate(
   mode = Node.Mode.NORMAL,
   description = "Windows .net slave",
   initScript = "",
-  tmpDir = null,
-  numExecutors = 1,
+  tmpDir = "",
+  userData = "",
+  numExecutors = "1",
   remoteAdmin = "vagrant",
   amiType = windowsAmiType,
-  jvmopts = null,
+  jvmopts = "",
   stopOnTerminate = false,
   subnetId = "subnet-d83942bc",
   tags = [],
   idleTerminationMinutes = "30",
   usePrivateDnsName = false,
-  instanceCapStr = null,
-  iamInstanceProfile = null,
-  deleteRootOnTermination = false,
+  instanceCapStr ="",
+  iamInstanceProfile ="",
   useEphemeralDevices = false,
   useDedicatedTenancy = false,
   launchTimeoutStr = "60",
   associatePublicIp = false,
-  customDeviceMapping = null,
-  connectBySSHProcess = false,
-  connectUsingPublicIp = false
+  customDeviceMapping = ""
 )
-
 
 logger.info("esc ECS_CLUSTER_ARN is ${arn} and JENKINS_OWN_IP is ${jenkinsUrl}")
 
