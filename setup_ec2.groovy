@@ -76,7 +76,7 @@ tqorJmqhuirJMIk83wPfEMxMR8lnHbaE9T6kYNBo2H/hAoGBAIWkF1x1dVeu8DFMWPyWH4ADSwhw
 uuhdQsQs3fuh4l1+1KDrvkCSi+Z87lU40Ftz7gOvguvh7eh3FTcWRiVE1oFEVAyiNf72QR+Kikfx
 fijN7MqcVEUonBBXkTCrBWlvyczUPjpwPmmaEkdQXyxtZ3I+bBXiecGHvNkVxvBKop4t
 -----END RSA PRIVATE KEY-----""",
-instanceCapStr = null,
+instanceCapStr = "",
 templates = Arrays.asList(windowsTemplate)  
 )
 
