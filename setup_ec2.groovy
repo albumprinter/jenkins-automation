@@ -17,7 +17,7 @@ def env = System.getenv()
 def windowsAmiType = new WindowsData("FooBar@123", false, "180")
 
 def windowsTemplate = new SlaveTemplate(
-  ami = "ami-c4e444bd",
+  ami = "ami-65b60e1c",
   zone = "eu-west-1b",
   spotConfig = null,
   securityGroups = "Jenkins",
