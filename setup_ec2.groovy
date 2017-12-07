@@ -43,7 +43,7 @@ def windowsTemplate = new SlaveTemplate(
   iamInstanceProfile ="",
   useEphemeralDevices = false,
   useDedicatedTenancy = false,
-  launchTimeoutStr = "60",
+  launchTimeoutStr = "180",
   associatePublicIp = false,
   customDeviceMapping = ""
 )
