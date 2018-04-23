@@ -12,6 +12,7 @@ import com.cloudbees.jenkins.plugins.amazonecs.ECSCloud
 def env = System.getenv()
 
 import com.cloudbees.jenkins.plugins.amazonecs.ECSTaskTemplate
+logger.info("netcore_dind")
 def netcore_dind = new ECSTaskTemplate(
   templateName="netcore-dind",
   label="netcore-dind",
@@ -27,6 +28,7 @@ def netcore_dind = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("jenkins_java")
 def jenkins_java = new ECSTaskTemplate(
   templateName="jenkins-java",
   label="jenkins-java",
@@ -42,6 +44,7 @@ def jenkins_java = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("netcore_serverless")
 def netcore_serverless = new ECSTaskTemplate(
   templateName="netcore-serverless",
   label="netcore-serverless",
@@ -57,6 +60,7 @@ def netcore_serverless = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("netcore_rc4_dind")
 def netcore_rc4_dind = new ECSTaskTemplate(
   templateName="netcore-rc4-dind",
   label="netcore-rc4-dind",
@@ -72,6 +76,7 @@ def netcore_rc4_dind = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("netcore10_dind_sls")
 def netcore10_dind_sls = new ECSTaskTemplate(
   templateName="netcore10-dind-sls",
   label="netcore10-dind-sls",
@@ -87,6 +92,7 @@ def netcore10_dind_sls = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("netcore10")
 def netcore10 = new ECSTaskTemplate(
   templateName="netcore10",
   label="netcore10",
@@ -102,7 +108,7 @@ def netcore10 = new ECSTaskTemplate(
   mountPoints=[]
 )
 
-
+logger.info("ecs")
 def ecs = new ECSTaskTemplate(
   templateName="ecs",
   label="ecs",
@@ -118,7 +124,7 @@ def ecs = new ECSTaskTemplate(
   mountPoints=[]
 )
 
-
+logger.info("dotnet")
 def dotnet = new ECSTaskTemplate(
   templateName="dotnet",
   label="dotnet",
@@ -135,7 +141,7 @@ def dotnet = new ECSTaskTemplate(
 )
 
 
-
+logger.info("ecsjava")
 def ecsjava = new ECSTaskTemplate(
   templateName="ecsjava",
   label="ecsjava",
@@ -151,6 +157,7 @@ def ecsjava = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("asp_net")
 def asp_net = new ECSTaskTemplate(
   templateName="asp_net",
   label="asp_net",
@@ -166,6 +173,7 @@ def asp_net = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("ecsjavaweb")
 def ecsjavaweb = new ECSTaskTemplate(
   templateName="ecsjavaweb",
   label="ecsjavaweb",
@@ -181,6 +189,7 @@ def ecsjavaweb = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("ecsjavawebff")
 def ecsjavawebff = new ECSTaskTemplate(
   templateName="ecsjavawebff",
   label="ecsjavawebff",
@@ -196,6 +205,7 @@ def ecsjavawebff = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("dockerbuilder")
 def dockerbuilder = new ECSTaskTemplate(
   templateName="dockerbuilder",
   label="dockerbuilder",
@@ -211,6 +221,7 @@ def dockerbuilder = new ECSTaskTemplate(
   mountPoints=[]
 )
 
+logger.info("alltestrun")
 def alltestrun = new ECSTaskTemplate(
   templateName="alltestrun",
   label="alltestrun",
@@ -227,7 +238,7 @@ def alltestrun = new ECSTaskTemplate(
 )
 
 
-
+logger.info("ecspython")
 def ecspython = new ECSTaskTemplate(
   templateName="ecspython",
   label="ecspython",
@@ -252,8 +263,8 @@ logger.info("esc ECS_CLUSTER_ARN is ${arn} and JENKINS_OWN_IP is ${jenkinsUrl}")
 
 ecsCloud = new ECSCloud(
   name="ecs",
-  templates=Arrays.asList(netcore_dind, jenkins_java, netcore_serverless, netcore_rc4_dind, 
-            netcore10_dind_sls, netcore10, ecs, dotnet, ecsjava, asp_net, ecsjavaweb, 
+  templates=Arrays.asList(netcore_dind, jenkins_java, netcore_serverless, netcore_rc4_dind,
+            netcore10_dind_sls, netcore10, ecs, dotnet, ecsjava, asp_net, ecsjavaweb,
              ecsjavawebff, dockerbuilder, alltestrun, ecspython),
   credentialsId=null,
   cluster=arn,
