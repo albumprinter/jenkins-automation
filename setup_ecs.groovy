@@ -18,8 +18,8 @@ def netcore_dind = new ECSTaskTemplate(
   label="netcore-dind",
   image="derwasp/jenkins-jnlp:dind-netcore-mono",
   remoteFSRoot=null,
-  memorySoftReservation=1536,
-  memoryHardReservation=0,
+  memory=1536,
+  memoryReservation=0,
   cpu=1024,
   privileged=false,
   containerUser=null,
@@ -27,8 +27,7 @@ def netcore_dind = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("jenkins_java")
 def jenkins_java = new ECSTaskTemplate(
@@ -36,8 +35,8 @@ def jenkins_java = new ECSTaskTemplate(
   label="jenkins-java",
   image="cloudbees/jnlp-slave-with-java-build-tools",
   remoteFSRoot=null,
-  memorySoftReservation=1024,
-  memoryHardReservation=0,
+  memory=1024,
+  memoryReservation=0,
   cpu=1,
   privileged=false,
   containerUser=null,
@@ -45,8 +44,7 @@ def jenkins_java = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("netcore_serverless")
 def netcore_serverless = new ECSTaskTemplate(
@@ -54,8 +52,8 @@ def netcore_serverless = new ECSTaskTemplate(
   label="netcore-serverless",
   image="derwasp/jenkins-jnlp:netcore1.0.3-sdk-rc4-004771-serverless-1.8.0",
   remoteFSRoot=null,
-  memorySoftReservation=1024,
-  memoryHardReservation=0,
+  memory=1024,
+  memoryReservation=0,
   cpu=256,
   privileged=false,
   containerUser=null,
@@ -63,8 +61,7 @@ def netcore_serverless = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("netcore_rc4_dind")
 def netcore_rc4_dind = new ECSTaskTemplate(
@@ -72,8 +69,8 @@ def netcore_rc4_dind = new ECSTaskTemplate(
   label="netcore-rc4-dind",
   image="derwasp/jenkins-jnlp:dind-1.13.1-netcore1.1-sdk-rc4-004771-mono-4.6.2.16",
   remoteFSRoot=null,
-  memorySoftReservation=1536,
-  memoryHardReservation=0,
+  memory=1536,
+  memoryReservation=0,
   cpu=1024,
   privileged=false,
   containerUser=null,
@@ -81,8 +78,7 @@ def netcore_rc4_dind = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("netcore10_dind_sls")
 def netcore10_dind_sls = new ECSTaskTemplate(
@@ -90,8 +86,8 @@ def netcore10_dind_sls = new ECSTaskTemplate(
   label="netcore10-dind-sls",
   image="derwasp/jenkins-jnlp:dind-1.13.0-netcore1.0.3-sdk-rc4-004771-mono-4.6.2.16-serverless-1.8.0",
   remoteFSRoot=null,
-  memorySoftReservation=1536,
-  memoryHardReservation=0,
+  memory=1536,
+  memoryReservation=0,
   cpu=1024,
   privileged=false,
   containerUser=null,
@@ -99,8 +95,7 @@ def netcore10_dind_sls = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("netcore10")
 def netcore10 = new ECSTaskTemplate(
@@ -108,8 +103,8 @@ def netcore10 = new ECSTaskTemplate(
   label="netcore10",
   image="derwasp/jenkins-jnlp:netcore1.0.5-sdk1.0.4-mono-4.8.0.524",
   remoteFSRoot=null,
-  memorySoftReservation=2048,
-  memoryHardReservation=0,
+  memory=2048,
+  memoryReservation=0,
   cpu=2048,
   privileged=false,
   containerUser=null,
@@ -117,8 +112,7 @@ def netcore10 = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("ecs")
 def ecs = new ECSTaskTemplate(
@@ -126,8 +120,8 @@ def ecs = new ECSTaskTemplate(
   label="ecs",
   image="cloudbees/jnlp-slave-with-java-build-tools",
   remoteFSRoot=null,
-  memorySoftReservation=2048,
-  memoryHardReservation=0,
+  memory=2048,
+  memoryReservation=0,
   cpu=1024,
   privileged=false,
   containerUser=null,
@@ -135,8 +129,7 @@ def ecs = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("dotnet")
 def dotnet = new ECSTaskTemplate(
@@ -144,8 +137,8 @@ def dotnet = new ECSTaskTemplate(
   label="dotnet",
   image="ivanakcheurov/jenkins-jnlp-slave-dotnet:v6",
   remoteFSRoot=null,
-  memorySoftReservation=2048,
-  memoryHardReservation=0,
+  memory=2048,
+  memoryReservation=0,
   cpu=1024,
   privileged=false,
   containerUser=null,
@@ -153,8 +146,7 @@ def dotnet = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 
 logger.info("ecsjava")
@@ -163,8 +155,8 @@ def ecsjava = new ECSTaskTemplate(
   label="ecsjava",
   image="apbowang/jenkinsslave:javabase",
   remoteFSRoot=null,
-  memorySoftReservation=2048,
-  memoryHardReservation=0,
+  memory=2048,
+  memoryReservation=0,
   cpu=1024,
   privileged=false,
   containerUser=null,
@@ -172,8 +164,7 @@ def ecsjava = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("asp_net")
 def asp_net = new ECSTaskTemplate(
@@ -181,8 +172,8 @@ def asp_net = new ECSTaskTemplate(
   label="asp_net",
   image="74th/jenkins-dotnet",
   remoteFSRoot=null,
-  memorySoftReservation=2048,
-  memoryHardReservation=0,
+  memory=2048,
+  memoryReservation=0,
   cpu=1024,
   privileged=false,
   containerUser=null,
@@ -190,8 +181,7 @@ def asp_net = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("ecsjavaweb")
 def ecsjavaweb = new ECSTaskTemplate(
@@ -199,8 +189,8 @@ def ecsjavaweb = new ECSTaskTemplate(
   label="ecsjavaweb",
   image="apbowang/jenkinsslave:javawebchrome",
   remoteFSRoot=null,
-  memorySoftReservation=4096,
-  memoryHardReservation=0,
+  memory=4096,
+  memoryReservation=0,
   cpu=2048,
   privileged=false,
   containerUser=null,
@@ -208,8 +198,7 @@ def ecsjavaweb = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("ecsjavawebff")
 def ecsjavawebff = new ECSTaskTemplate(
@@ -217,8 +206,8 @@ def ecsjavawebff = new ECSTaskTemplate(
   label="ecsjavawebff",
   image="apbowang/javawebffjenkinsslave",
   remoteFSRoot=null,
-  memorySoftReservation=4096,
-  memoryHardReservation=0,
+  memory=4096,
+  memoryReservation=0,
   cpu=2048,
   privileged=false,
   containerUser=null,
@@ -226,8 +215,7 @@ def ecsjavawebff = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("dockerbuilder")
 def dockerbuilder = new ECSTaskTemplate(
@@ -235,8 +223,8 @@ def dockerbuilder = new ECSTaskTemplate(
   label="dockerbuilder",
   image="derwasp/jenkins-jnlp-dind",
   remoteFSRoot=null,
-  memorySoftReservation=7000,
-  memoryHardReservation=0,
+  memory=7000,
+  memoryReservation=0,
   cpu=2048,
   privileged=false,
   containerUser=null,
@@ -244,8 +232,7 @@ def dockerbuilder = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 logger.info("alltestrun")
 def alltestrun = new ECSTaskTemplate(
@@ -253,8 +240,8 @@ def alltestrun = new ECSTaskTemplate(
   label="alltestrun",
   image="apbowang/javawebjenkinsslave",
   remoteFSRoot=null,
-  memorySoftReservation=7000,
-  memoryHardReservation=0,
+  memory=7000,
+  memoryReservation=0,
   cpu=2048,
   privileged=false,
   containerUser=null,
@@ -262,8 +249,7 @@ def alltestrun = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 
 logger.info("ecspython")
@@ -272,8 +258,8 @@ def ecspython = new ECSTaskTemplate(
   label="ecspython",
   image="sajnikanth/docker",
   remoteFSRoot=null,
-  memorySoftReservation=2048,
-  memoryHardReservation=0,
+  memory=2048,
+  memoryReservation=0,
   cpu=2048,
   privileged=false,
   containerUser=null,
@@ -281,8 +267,7 @@ def ecspython = new ECSTaskTemplate(
   environments=[],
   extraHosts=[],
   mountPoints=[],
-  extraHosts=[]
-)
+  portMappings=[])
 
 
 String arn= env['ECS_CLUSTER_ARN']
