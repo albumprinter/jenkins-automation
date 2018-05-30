@@ -114,6 +114,23 @@ def netcore10 = new ECSTaskTemplate(
   mountPoints=[],
   portMappings=[])
 
+logger.info("netcore20")
+def netcore20 = new ECSTaskTemplate(
+  templateName="netcore20",
+  label="netcore20",
+  image="derwasp/jenkins-jnlp:netcore2.0.5-sdk2.1.101-mono-4.8.0.524",
+  remoteFSRoot=null,
+  memory=2048,
+  memoryReservation=0,
+  cpu=2048,
+  privileged=false,
+  containerUser=null,
+  logDriverOptions=[],
+  environments=[],
+  extraHosts=[],
+  mountPoints=[],
+  portMappings=[])
+
 logger.info("ecs")
 def ecs = new ECSTaskTemplate(
   templateName="ecs",
@@ -279,7 +296,7 @@ logger.info("esc ECS_CLUSTER_ARN is ${arn} and JENKINS_OWN_IP is ${jenkinsUrl}")
 ecsCloud = new ECSCloud(
   name="ecs",
   templates=Arrays.asList(netcore_dind, jenkins_java, netcore_serverless, netcore_rc4_dind,
-            netcore10_dind_sls, netcore10, ecs, dotnet, ecsjava, asp_net, ecsjavaweb,
+            netcore10_dind_sls, netcore10, netcore20, ecs, dotnet, ecsjava, asp_net, ecsjavaweb,
              ecsjavawebff, dockerbuilder, alltestrun, ecspython),
   credentialsId=null,
   cluster=arn,
