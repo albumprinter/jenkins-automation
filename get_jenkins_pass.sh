@@ -13,3 +13,4 @@ fi
 
 provisionPass=`sudo cat $JENKINS_HOME/secrets/provisionerPassword`
 echo $provisionPass
+
