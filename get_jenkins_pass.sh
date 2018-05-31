@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-JENKINS_HOME=${JENKINS_HOME:-/root/.jenkins/}
+JENKINS_HOME=${JENKINS_HOME:-/root/.jenkins}
 if [ ! -f $JENKINS_HOME/secrets/provisionerPassword ]; then
     # echo "provisioner password not found!"
     pass=`sudo cat $JENKINS_HOME/secrets/initialAdminPassword`
